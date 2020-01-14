@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Happy New Year!</title>
+  <style>
+  .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: right;
+}
+</style>
+
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+		  	{% if messages %}
+		    	<ul>
+		    		{% for category, message in messages %}
+		      			<li class="ui {{ category }} message flash">{{ message }}</li>
+		    		{% endfor %}
+		    	</ul>
+		  	{% endif %}
+		{% endwith %}
+
+    <h1>Happy new year <span>API</span></h1>
+
+
+	<div id="form" >
+
+    <form action = "https://qwertyuisub.pythonanywhere.com/predictly/" method = "POST"
+         enctype = "multipart/form-data">
+         Sender:
+         <input type="text" name="sender"><br>
+         Reciever:
+         <input type="text" name="reciever"><br>
+         <input type = "file" name = "file" />
+         <input type = "submit" value="Send">
+      </form>
+
+	</div>
+
+		<br/>
+		<span style="color: #4DAF7C; font-weight: 400; font-family: 'Open Sans', Helvetica;	">Select image to upload!</span>
+	<br>
+        <h3>Send your friends custom happy new year images</h3>
+    <div  style="margin:20px">
+            <img  src="https://qwertyuisub.pythonanywhere.com/static/xrayimgs/Happy-New-Year-2020-PNG-Picture.png">
+            <br>
+            A sample image
+    </div>
+	<div class="footer">
+        <a href="https://qwertyuisub.pythonanywhere.com">Home</a> | <a href="https://qwertyuisub.pythonanywhere.com/about/">About</a> | <a href="https://qwertyuisub.pythonanywhere.com/contact/">Contact</a> | <a href="https://github.com/SubrataSarkar32/">Source</a>
+    </div>
+</body>
+</html>
